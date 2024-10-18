@@ -31,4 +31,4 @@ spec:
       service:
         type: NodePort                       # Service type
         port: 5432
-        nodePort: 30000                            # Port for the PostgreSQL service
+        nodePort: 30011                            # Port for the PostgreSQL service
