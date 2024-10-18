@@ -28,7 +28,7 @@ spec:
       persistence:
         enabled: true
         size: 2Gi
-    service:
-      type: NodePort                       # Service type
-      port: 5432
-      nodePort: 30000                            # Port for the PostgreSQL service
+      service:
+        type: NodePort                       # Service type
+        port: 5432
+        nodePort: 30000                            # Port for the PostgreSQL service
