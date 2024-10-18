@@ -15,15 +15,13 @@ spec:
         namespace: psac-gitops
   interval: 1h
   values:
-    global:
-      postgresql:
-        usernameSecret:
-          name: postgresql-secret
-          key: postgresql-username
-        passwordSecret:
-          name: postgresql-secret
-          key: postgresql-password
-        postgresqlDatabase: psacdb 
+    postgresqlUsernameSecret:
+      name: postgresql-secret
+      key: postgresql-username
+    postgresqlPasswordSecret:
+      name: postgresql-secret
+      key: postgresql-password
+    postgresqlDatabase: psacdb 
     primary:
       persistence:
         enabled: true
@@ -31,4 +29,5 @@ spec:
       service:
         type: NodePort                       # Service type
         port: 5432
-        nodePort: 30011                            # Port for the PostgreSQL service
+        targetPort: 5432
+        nodePort: 30011                     # Port for the PostgreSQL service
