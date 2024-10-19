@@ -16,7 +16,7 @@ spec:
   interval: 1h
   values:
     auth:
-      existingSecret: postgresql
+      existingSecret: postgresql-secret
     persistence:
       enabled: true
       size: 2Gi
