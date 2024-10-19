@@ -1,0 +1,7 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+namespace: helm-postgresql
+resources:
+  - namespace.yaml
+  - helm-repo.yaml
+  - helm-release.yaml

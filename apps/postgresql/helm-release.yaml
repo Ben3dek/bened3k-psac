@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: postgresql-release
-  namespace: psac-gitops
+  namespace: helm-postgresql
 spec:
   releaseName: postgresql
   chart:
@@ -15,13 +15,6 @@ spec:
         namespace: psac-gitops
   interval: 1h
   values:
-    postgresqlUsernameSecret:
-      name: postgresql-secret
-      key: postgresql-username
-    postgresqlPasswordSecret:
-      name: postgresql-secret
-      key: postgresql-password
-    postgresqlDatabase: psacdb 
     primary:
       persistence:
         enabled: true

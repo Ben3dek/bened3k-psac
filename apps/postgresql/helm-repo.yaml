@@ -1,8 +1,8 @@
-apiVersion: source.toolkit.fluxcd.io/v1beta1
+apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: bitnami-repo
-  namespace: psac-gitops
+  name: bitnami
+  namespace: helm-postgresql
 spec:
   interval: 1h
   url: https://charts.bitnami.com/bitnami
