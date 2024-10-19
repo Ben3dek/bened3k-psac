@@ -24,5 +24,7 @@ spec:
         size: 2Gi
       service:
         type: NodePort
-        ports: 5432
-        nodePorts: 30011
+        ports: 
+          postgresql: 5432
+        nodePorts:
+          postgresql: 30011
