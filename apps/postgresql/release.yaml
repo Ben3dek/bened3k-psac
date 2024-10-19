@@ -11,8 +11,8 @@ spec:
       version: 12.1.0
       sourceRef:
         kind: HelmRepository
-        name: bitnami-repo
-        namespace: psac-gitops
+        name: bitnami
+        namespace: postgresql
   interval: 1h
   values:
     primary:
