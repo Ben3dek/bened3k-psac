@@ -16,7 +16,9 @@ spec:
   interval: 1h
   values:
     auth:
-      existingSecret: postgresql-secret    # Referencing an existing secret for credentials
+      username: admin
+      password: admin123
+      database: helmpostgredb
     persistence:
       enabled: true
       size: 2Gi
