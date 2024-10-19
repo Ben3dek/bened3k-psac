@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: postgresql
-      version: 14.0.0
+      version: 16.0.0
       sourceRef:
         kind: HelmRepository
         name: bitnami
@@ -18,6 +18,8 @@ spec:
     global:
       postgresql:
         auth:
+          database: testdb
+          username: admin
           existingSecret: postgresql-secret
     primary:
       persistence:
