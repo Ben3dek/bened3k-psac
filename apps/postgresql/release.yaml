@@ -1,8 +1,8 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: postgresql-release
-  namespace: helm-postgresql
+  name: postgresql
+  namespace: postgresql
 spec:
   releaseName: postgresql
   chart:
