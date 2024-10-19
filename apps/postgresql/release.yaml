@@ -18,10 +18,10 @@ spec:
     global:
       postgresql:
         auth:
-          #existingSecret: postgresql-secret
-          database: testdb
-          username: admin
-          password: admin123
+          existingSecret: postgresql-secret
+          #database: testdb
+          #username: admin
+          #password: admin123
     primary:
       persistence:
         enabled: true
