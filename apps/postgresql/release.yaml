@@ -16,9 +16,7 @@ spec:
   interval: 1h
   values:
     auth:
-      username: admin
-      password: admin123
-      database: testdb
+      existingSecret: postgresql
     persistence:
       enabled: true
       size: 2Gi
