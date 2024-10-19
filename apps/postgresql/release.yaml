@@ -15,12 +15,14 @@ spec:
         namespace: infrastructure
   interval: 1h
   values:
-    auth:
-      existingSecret: postgresql-secret
-    persistence:
-      enabled: true
-      size: 2Gi
-    service:
-      type: NodePort                       # Service type
-      port: 5432
-      nodePort: 30011                      # Port for the PostgreSQL service
+    global:
+      auth:
+        existingSecret: postgresql-secret
+    primary:
+      persistence:
+        enabled: true
+        size: 2Gi
+      service:
+        type: NodePort
+        ports: 5432
+        nodePorts: 30011
