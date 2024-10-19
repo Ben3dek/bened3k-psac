@@ -16,8 +16,9 @@ spec:
   interval: 1h
   values:
     global:
-      auth:
-        existingSecret: postgresql-secret
+      postgresql:
+        auth:
+          existingSecret: postgresql-secret
     primary:
       persistence:
         enabled: true
