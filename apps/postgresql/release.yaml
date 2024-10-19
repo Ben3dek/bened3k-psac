@@ -12,15 +12,15 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: bitnami
-        namespace: postgresql
+        namespace: infrastructure
   interval: 1h
   values:
-    primary:
-      persistence:
-        enabled: true
-        size: 2Gi
-      service:
-        type: NodePort                       # Service type
-        port: 5432
-        targetPort: 5432
-        nodePort: 30011                     # Port for the PostgreSQL service
+    auth:
+      existingSecret: postgresql-secret    # Referencing an existing secret for credentials
+    persistence:
+      enabled: true
+      size: 2Gi
+    service:
+      type: NodePort                       # Service type
+      port: 5432
+      nodePort: 30011                      # Port for the PostgreSQL service
