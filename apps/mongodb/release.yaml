@@ -16,9 +16,9 @@ spec:
         namespace: infrastructure
   values:
     auth:
-      databases: testdb
-      usernames: admin
-      passwords: admin123
+      databases: [testdb]
+      usernames: [admin]
+      passwords: [admin123]
     persistence:
       enabled: true
       size: 1Gi
