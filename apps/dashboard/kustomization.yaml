@@ -3,3 +3,6 @@ kind: Kustomization
 namespace: kubernetes-dashboard
 resources:
   - namespace.yaml
+  - clusterrolebinding.yaml
+  - serviceaccount.yaml
+  - release.yaml
