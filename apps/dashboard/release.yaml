@@ -14,7 +14,3 @@ spec:
         kind: HelmRepository
         name: dashboard
         namespace: infrastructure
-  values:
-    service:
-      type: NodePort
-      nodePort: 30000
