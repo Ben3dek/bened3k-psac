@@ -4,7 +4,7 @@ metadata:
   name: apps-locator
   namespace: flux-system
 resources:
-  - example-app/deploy/kustomization.yaml
+  #- example-app/deploy/kustomization.yaml
   - postgresql/kustomization.yaml
   - dashboard/kustomization.yaml
   - mongodb/kustomization.yaml
