@@ -38,6 +38,7 @@ flux bootstrap github \
 --owner=Ben3dek \
 --repository=bened3k-psac \
 --path=./clusters/minikube \
+--components-extra=image-reflector-controller,image-automation-controller \
 --personal
 --branch main
 ```
