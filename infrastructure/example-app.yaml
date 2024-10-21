@@ -4,5 +4,5 @@ metadata:
   name: example-app
   namespace: infrastructure
 spec:
-  image: ghcr.io/ben3dek
+  image: ghcr.io/ben3dek/example-app
   interval: 1m

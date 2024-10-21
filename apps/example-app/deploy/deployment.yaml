@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: example-app
-        image: ghcr.io/ben3dek/example-app:v1.0.0
+        image: example-app:v1.0.0
         ports:
         - containerPort: 5000
