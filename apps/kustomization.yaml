@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+metadata:
+  name: apps-locator
+  namespace: flux-system
+resources:
+  - example-app/deploy/kustomization.yaml
+  - postgresql/kustomization.yaml
+  - dashboard/kustomization.yaml
+  - mongodb/kustomization.yaml
