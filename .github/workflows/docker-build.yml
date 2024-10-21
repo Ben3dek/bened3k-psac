@@ -30,8 +30,10 @@ jobs:
         run: |
           # Extract the branch name from the GitHub event
           branch_name=${{ github.ref_name }}
+
+          version_name=$(echo $branch_name | cut -d'/' -f2)
           
-          docker build -t ghcr.io/${{ github.repository_owner }}/example-app:$branch_name -f ./apps/example-app/source/Dockerfile .
+          docker build -t ghcr.io/${{ github.repository_owner }}/example-app:$version_name -f ./apps/example-app/source/Dockerfile .
           
       # Step 5: Push Docker image with the new branch name as the tag
       - name: Push Docker image
@@ -39,5 +41,7 @@ jobs:
           # Extract the branch name from the GitHub event
           branch_name=${{ github.ref_name }}
 
+          version_name=$(echo $branch_name | cut -d'/' -f2)
+
           # Push the Docker image with the branch name tag
-          docker push ghcr.io/${{ github.repository_owner }}/example-app:$branch_name
+          docker push ghcr.io/${{ github.repository_owner }}/example-app:$version_name 
