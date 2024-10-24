@@ -6,3 +6,6 @@ metadata:
 spec:
   image: ghcr.io/ben3dek/bened3k-psac/example-app
   interval: 1m
+  accessFrom:
+    namespaceSelectors:
+      - matchLabels: {}
