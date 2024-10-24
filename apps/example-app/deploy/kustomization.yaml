@@ -5,5 +5,5 @@ resources:
   - namespace.yaml
   - deployment.yaml
   - service.yaml
-  #- imagepolicy.yaml
-  #- imageupdateautomation.yaml
+  - imagepolicy.yaml
+  - imageupdateautomation.yaml
