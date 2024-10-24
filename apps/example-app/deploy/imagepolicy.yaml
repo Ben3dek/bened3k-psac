@@ -7,6 +7,10 @@ spec:
   imageRepositoryRef:
     name: example-app
     namespace: infrastructure
+  accessFrom:
+    namespaceSelectors:
+      - matchLabels:
+          kubernetes.io/metadata.name: infrastructure
   policy:
     semver:
       range: 1.x.x
