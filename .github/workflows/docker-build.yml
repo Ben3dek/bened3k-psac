@@ -8,11 +8,26 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
     steps:
       # Step 1: Check out the code
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Set env
+        id: Set-env
+        run: |
+          branch_name=${{ github.ref_name }}
+          version=$(echo $branch_name | cut -d'/' -f2)
+          
+          repo_name_lower=$(echo ${{ github.repository}} | tr '[:upper:]' '[:lower:]')
+
+          echo "VERSION=$version" >> $GITHUB_ENV
+          echo "REPO_NAME=$repo_name_lower" >> $GITHUB_ENV
 
       # Step 2: Set up Docker build environment
       - name: Set up Docker
@@ -26,23 +41,8 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      # Step 4: Build the Docker image
-      - name: Build Docker image
+      # Step 4: Build and Push the Docker image
+      - name: Build and Push Docker image
         run: |
-          # Extract the branch name from the GitHub event
-          branch_name=${{ github.ref_name }}
-
-          version_name=$(echo $branch_name | cut -d'/' -f2)
-          repo_name_lower=$(echo ${{ github.repository}} | tr '[:upper:]' '[:lower:]')
-          
-          docker build -t ghcr.io/$repo_name_lower/example-app:$version_name -f ./apps/example-app/source/Dockerfile .
-          
-      - name: Push Docker image
-        run: |
-          # Extract the branch name from the GitHub event
-          branch_name=${{ github.ref_name }}
-
-          version_name=$(echo $branch_name | cut -d'/' -f2)
-          repo_name_lower=$(echo ${{ github.repository}} | tr '[:upper:]' '[:lower:]')
-
-          docker push ghcr.io/$repo_name_lower/example-app:$version_name 
+          docker build -t ghcr.io/${{ env.REPO_NAME }}/example-app:${{ env.VERSION }} -f ./apps/example-app/source/Dockerfile ./apps/example-app/source/
+          docker push ghcr.io/${{ env.REPO_NAME }}/example-app:${{ env.VERSION }}

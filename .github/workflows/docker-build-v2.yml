@@ -7,6 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
+  REGISTRY_REPO: ben3dek/bened3k-psac
 
 jobs:
   build-and-push-image:
@@ -39,7 +40,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/example-app:${{ env.VERSION_NAME }}
+          images: ${{ env.REGISTRY }}/${{ env.REGISTRY_REPO }}/example-app:${{ env.VERSION_NAME }}
 
       - name: Build and push Docker image
         id: push
