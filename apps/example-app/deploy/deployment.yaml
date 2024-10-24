@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: example-app
-        image: ghcr.io/ben3dek/bened3k-psac/example-app:v1.0.0
+        image: ghcr.io/ben3dek/bened3k-psac/example-app:v1.0.0 # {"$imagepolicy": "example-app:example-app"}
         ports:
         - containerPort: 5000
