@@ -4,4 +4,4 @@ resources:
   - namespace.yaml
   - bitnami.yaml
   - dashboard.yaml
-  #- example-app.yaml
+  - example-app.yaml
