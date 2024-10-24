@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: example-app
 resources:
   - namespace.yaml
-  #- deployment.yaml
+  - deployment.yaml
+  - service.yaml
   #- imagepolicy.yaml
   #- imageupdateautomation.yaml
-  #- service.yaml
