@@ -1,6 +1,6 @@
 # PSAC-flux
 
-1. Install flux
+## 1. Install flux
 
 ```sh
 curl -s https://fluxcd.io/install.sh | sudo bash
@@ -11,7 +11,7 @@ curl -s https://fluxcd.io/install.sh | sudo bash
 flux check --pre
 ```
 
-3. generate github access token
+## 3. generate github access token
 
 https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
 
@@ -19,7 +19,7 @@ then export it
 ```sh
 export GITHUB_TOKEN=<your-token-here>
 ```
-4. connect git
+## 4. connect git
 ```sh
 flux bootstrap github \
 --token-auth \
@@ -43,8 +43,8 @@ flux bootstrap github \
 --branch main
 ```
 
-5. check if flux is running in the cluster
+## 5. check if flux is running in the cluster
 ```sh
 kubectl get pods -n <your-namespace>
 ```
-6. Kustomize flex
+## 6. Kustomize flex
