@@ -19,7 +19,7 @@
     ```sh
     export GITHUB_TOKEN=<your-token-here>
     ```
-4. connect git
+4. Connect git
 
     ```sh
     flux bootstrap github \
