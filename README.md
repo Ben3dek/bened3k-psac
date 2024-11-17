@@ -44,7 +44,7 @@
     --branch main
     ```
 
-5. check if flux is running in the cluster
+5. Check if flux is running in the cluster
     ```sh
     kubectl get pods -n <your-namespace>
     ```
